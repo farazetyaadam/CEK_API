@@ -3,15 +3,15 @@ name: Gemini API Auto Report
 on:
   push:
     branches: [ main ]
-  workflow_dispatch: # Tombol manual untuk cek kapan saja
+  workflow_dispatch: 
   schedule:
-    - cron: '0 0 * * *' # Berjalan otomatis setiap tengah malam
+    - cron: '0 0 * * *'
 
 jobs:
   build-and-report:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # Penting agar bot bisa menulis file ke repo
+      contents: write
     
     steps:
       - name: Checkout Repository
@@ -38,24 +38,31 @@ jobs:
           genai.configure(api_key=api_key)
 
           with open('API_REPORT.md', 'w') as f:
-              f.write(f'# Laporan API Gemini Terkini\n')
-              f.write(f'Terakhir diperbarui: {datetime.now().strftime(\"%Y-%m-%d %H:%M:%S\")} GMT\n\n')
-              f.write('| Nama Model (ID) | Nama Tampilan | Metode Dukungan |\n')
+              f.write('# 📊 LAPORAN STATUS API GEMINI\n\n')
+              f.write(f'> **Update Terakhir:** {datetime.now().strftime('%d %B %Y | %H:%M:%S')} GMT\n\n')
+              
+              f.write('### ✅ Model yang Mendukung Penulisan (generateContent)\n')
+              f.write('Gunakan ID Model di bawah ini pada skrip utama Anda untuk menghindari Error 404.\n\n')
+              f.write('| ID Model (Gunakan ini) | Nama Tampilan | Status |\n')
               f.write('| :--- | :--- | :--- |\n')
               
               try:
-                  for m in genai.list_models():
-                      methods = ', '.join(m.supported_generation_methods)
-                      f.write(f'| `{m.name}` | {m.display_name} | {methods} |\n')
-                  print('Laporan berhasil dibuat.')
+                  models = list(genai.list_models())
+                  for m in models:
+                      if 'generateContent' in m.supported_generation_methods:
+                          f.write(f'| **`{m.name}`** | {m.display_name} | Ready ✅ |\n')
+                  
+                  f.write('\n\n### ℹ️ Info Tambahan\n')
+                  f.write('- Jika model yang Anda cari tidak ada, periksa region atau batasan API Key Anda.\n')
+                  f.write('- Gunakan ID model yang dicetak tebal di atas untuk skrip otonom Anda.\n')
               except Exception as e:
-                  f.write(f'\n\n> **ERROR:** Gagal mengambil data. Periksa apakah API KEY valid. \nDetail: {e}')
+                  f.write(f'\n\n> ❌ **CRITICAL ERROR:** {str(e)}\n')
           "
 
       - name: Commit and Push Report
         run: |
-          git config --global user.name "Gemini-Autobot"
+          git config --global user.name "Gemini-Reporter-Bot"
           git config --global user.email "bot@github.com"
           git add API_REPORT.md
-          git commit -m "Update API Report [skip ci]" || echo "No changes to commit"
+          git commit -m "Update API Status Report [skip ci]" || echo "No changes"
           git push
