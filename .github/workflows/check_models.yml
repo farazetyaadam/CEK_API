@@ -34,29 +34,44 @@ jobs:
           import os
           from datetime import datetime
 
+          # Konfigurasi API
           api_key = os.getenv('GEMINI_API_KEY')
+          if not api_key:
+              with open('API_REPORT.md', 'w') as f:
+                  f.write('# ❌ ERROR: API KEY TIDAK DITEMUKAN\n\nPastikan Anda sudah menambahkan `GEMINI_API_KEY` di GitHub Secrets.')
+              exit(0)
+
           genai.configure(api_key=api_key)
+          time_now = datetime.now().strftime('%d %B %Y | %H:%M:%S')
 
           with open('API_REPORT.md', 'w') as f:
               f.write('# 📊 LAPORAN STATUS API GEMINI\n\n')
-              f.write(f'> **Update Terakhir:** {datetime.now().strftime('%d %B %Y | %H:%M:%S')} GMT\n\n')
+              f.write(f'> **Update Terakhir:** {time_now} GMT\n\n')
               
-              f.write('### ✅ Model yang Mendukung Penulisan (generateContent)\n')
-              f.write('Gunakan ID Model di bawah ini pada skrip utama Anda untuk menghindari Error 404.\n\n')
-              f.write('| ID Model (Gunakan ini) | Nama Tampilan | Status |\n')
+              f.write('### ✅ Model yang Siap Digunakan (generateContent)\n')
+              f.write('Salin ID Model di bawah ini untuk digunakan di skrip otonom Anda:\n\n')
+              f.write('| ID Model (Gunakan ini) | Nama Model | Status |\n')
               f.write('| :--- | :--- | :--- |\n')
               
               try:
                   models = list(genai.list_models())
+                  available_count = 0
                   for m in models:
                       if 'generateContent' in m.supported_generation_methods:
-                          f.write(f'| **`{m.name}`** | {m.display_name} | Ready ✅ |\n')
+                          f.write(f'| **`{m.name}`** | {m.display_name} | READY ✅ |\n')
+                          available_count += 1
                   
-                  f.write('\n\n### ℹ️ Info Tambahan\n')
-                  f.write('- Jika model yang Anda cari tidak ada, periksa region atau batasan API Key Anda.\n')
-                  f.write('- Gunakan ID model yang dicetak tebal di atas untuk skrip otonom Anda.\n')
+                  if available_count == 0:
+                      f.write('| - | Tidak ada model yang mendukung generateContent | ⚠️ |\n')
+
+                  f.write('\n\n### 🛠️ Solusi Error 404\n')
+                  f.write('Jika Anda sebelumnya mendapatkan error 404, itu karena nama model di kode Anda tidak sesuai dengan daftar di atas.\n\n')
+                  f.write('**Cara Memperbaiki:**\n')
+                  f.write('1. Pilih ID dari tabel (misal: `models/gemini-1.5-pro-latest`).\n')
+                  f.write('2. Ganti baris di kode Anda menjadi: `model = genai.GenerativeModel(\"models/gemini-1.5-pro-latest\")`.\n')
+                  
               except Exception as e:
-                  f.write(f'\n\n> ❌ **CRITICAL ERROR:** {str(e)}\n')
+                  f.write(f'\n\n> ❌ **Gagal Mengambil Data:** {str(e)}\n')
           "
 
       - name: Commit and Push Report
@@ -64,5 +79,5 @@ jobs:
           git config --global user.name "Gemini-Reporter-Bot"
           git config --global user.email "bot@github.com"
           git add API_REPORT.md
-          git commit -m "Update API Status Report [skip ci]" || echo "No changes"
+          git commit -m "Update API Status Report [skip ci]" || echo "No changes to commit"
           git push
