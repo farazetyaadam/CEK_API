@@ -1,6 +1,6 @@
 # 📊 LAPORAN STATUS API GEMINI
 
-> **Update Terakhir:** 21 April 2026 | 01:47:40 GMT
+> **Update Terakhir:** 22 April 2026 | 01:46:16 GMT
 
 ### ✅ Model yang Siap Digunakan (generateContent)
 Salin ID Model di bawah ini untuk digunakan di skrip otonom Anda:
@@ -42,6 +42,8 @@ Salin ID Model di bawah ini untuk digunakan di skrip otonom Anda:
 | **** | Gemini Robotics-ER 1.5 Preview | READY ✅ |
 | **** | Gemini Robotics-ER 1.6 Preview | READY ✅ |
 | **** | Gemini 2.5 Computer Use Preview 10-2025 | READY ✅ |
+| **** | Deep Research Max Preview (Apr-21-2026) | READY ✅ |
+| **** | Deep Research Preview (Apr-21-2026) | READY ✅ |
 | **** | Deep Research Pro Preview (Dec-12-2025) | READY ✅ |
 
 
