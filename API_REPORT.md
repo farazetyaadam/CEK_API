@@ -1,6 +1,6 @@
 # 📊 LAPORAN STATUS API GEMINI
 
-> **Update Terakhir:** 10 August 2026 | 01:01:42 GMT
+> **Update Terakhir:** 11 August 2026 | 01:01:07 GMT
 
 ### ✅ Model yang Siap Digunakan (generateContent)
 Salin ID Model di bawah ini untuk digunakan di skrip otonom Anda:
@@ -9,10 +9,6 @@ Salin ID Model di bawah ini untuk digunakan di skrip otonom Anda:
 | :--- | :--- | :--- |
 | **** | Gemini 2.5 Flash | READY ✅ |
 | **** | Gemini 2.5 Pro | READY ✅ |
-| **** | Gemini 2.0 Flash | READY ✅ |
-| **** | Gemini 2.0 Flash 001 | READY ✅ |
-| **** | Gemini 2.0 Flash-Lite 001 | READY ✅ |
-| **** | Gemini 2.0 Flash-Lite | READY ✅ |
 | **** | Gemini 2.5 Flash Preview TTS | READY ✅ |
 | **** | Gemini 2.5 Pro Preview TTS | READY ✅ |
 | **** | Gemma 4 26B A4B IT | READY ✅ |
@@ -22,7 +18,6 @@ Salin ID Model di bawah ini untuk digunakan di skrip otonom Anda:
 | **** | Gemini Pro Latest | READY ✅ |
 | **** | Gemini 2.5 Flash-Lite | READY ✅ |
 | **** | Nano Banana | READY ✅ |
-| **** | Gemini 3 Pro Preview | READY ✅ |
 | **** | Gemini 3 Flash Preview | READY ✅ |
 | **** | Gemini 3.1 Pro Preview | READY ✅ |
 | **** | Gemini 3.1 Pro Preview Custom Tools | READY ✅ |
@@ -41,7 +36,6 @@ Salin ID Model di bawah ini untuk digunakan di skrip otonom Anda:
 | **** | Lyria 3 Clip Preview | READY ✅ |
 | **** | Lyria 3 Pro Preview | READY ✅ |
 | **** | Gemini 3.1 Flash TTS Preview | READY ✅ |
-| **** | Gemini Robotics-ER 1.5 Preview | READY ✅ |
 | **** | Gemini Robotics-ER 1.6 Preview | READY ✅ |
 | **** | Gemini Robotics-ER 2 Preview | READY ✅ |
 | **** | Gemini 2.5 Computer Use Preview 10-2025 | READY ✅ |
