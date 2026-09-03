@@ -1,6 +1,6 @@
 # 📊 LAPORAN STATUS API GEMINI
 
-> **Update Terakhir:** 02 September 2026 | 02:03:58 GMT
+> **Update Terakhir:** 03 September 2026 | 02:09:17 GMT
 
 ### ✅ Model yang Siap Digunakan (generateContent)
 Salin ID Model di bawah ini untuk digunakan di skrip otonom Anda:
@@ -11,6 +11,7 @@ Salin ID Model di bawah ini untuk digunakan di skrip otonom Anda:
 | **** | Gemini 2.5 Pro | READY ✅ |
 | **** | Gemini 2.5 Flash Preview TTS | READY ✅ |
 | **** | Gemini 2.5 Pro Preview TTS | READY ✅ |
+| **** | Gemini Flash Latest | READY ✅ |
 | **** | Gemma 4 26B A4B IT | READY ✅ |
 | **** | Gemma 4 31B IT | READY ✅ |
 | **** | Gemini Flash Latest | READY ✅ |
@@ -36,6 +37,7 @@ Salin ID Model di bawah ini untuk digunakan di skrip otonom Anda:
 | **** | Gemini 3.5 Transcribe | READY ✅ |
 | **** | Gemini 3.6 Flash | READY ✅ |
 | **** | Gemini 3.7 Flash | READY ✅ |
+| **** | Gemini 3.8 Flash | READY ✅ |
 | **** | Lyria 3 Clip Preview | READY ✅ |
 | **** | Lyria 3 Pro Preview | READY ✅ |
 | **** | Gemini 3.1 Flash TTS Preview | READY ✅ |
