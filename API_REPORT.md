@@ -1,6 +1,6 @@
 # 📊 LAPORAN STATUS API GEMINI
 
-> **Update Terakhir:** 06 October 2026 | 03:56:57 GMT
+> **Update Terakhir:** 07 October 2026 | 03:24:37 GMT
 
 ### ✅ Model yang Siap Digunakan (generateContent)
 Salin ID Model di bawah ini untuk digunakan di skrip otonom Anda:
@@ -29,6 +29,7 @@ Salin ID Model di bawah ini untuk digunakan di skrip otonom Anda:
 | **** | Nano Banana 2 | READY ✅ |
 | **** | Nano Banana 2 | READY ✅ |
 | **** | Nano Banana 2 Lite | READY ✅ |
+| **** | Nano Banana 2.1 | READY ✅ |
 | **** | Gemini 3.5 Flash | READY ✅ |
 | **** | Gemini 3.5 Flash Lite | READY ✅ |
 | **** | Gemini Omni Flash Preview | READY ✅ |
