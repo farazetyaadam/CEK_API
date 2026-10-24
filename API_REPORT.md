@@ -1,6 +1,6 @@
 # 📊 LAPORAN STATUS API GEMINI
 
-> **Update Terakhir:** 23 October 2026 | 02:37:33 GMT
+> **Update Terakhir:** 24 October 2026 | 02:35:44 GMT
 
 ### ✅ Model yang Siap Digunakan (generateContent)
 Salin ID Model di bawah ini untuk digunakan di skrip otonom Anda:
@@ -52,7 +52,7 @@ Salin ID Model di bawah ini untuk digunakan di skrip otonom Anda:
 | **** | Antigravity Agent Preview Latest | READY ✅ |
 | **** | Deep Research Max Preview (Apr-21-2026) | READY ✅ |
 | **** | Deep Research Preview (Apr-21-2026) | READY ✅ |
-| **** | Deep Research Pro Preview (Dec-12-2025) | READY ✅ |
+| **** | Deep Research Pro Preview (Dec-12-2025) [Rerouted] | READY ✅ |
 
 
 ### 🛠️ Solusi Error 404
